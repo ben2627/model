@@ -1,0 +1,19 @@
+Include Clusters
+1 1 Cell 30 40 30 40 0 0
+1 2 Nucleus 33 37 33 37 0 0
+2 3 Cell 50 60 30 40 0 0
+2 4 Nucleus 53 57 33 37 0 0
+3 5 Cell 70 80 30 40 0 0
+3 6 Nucleus 73 77 33 37 0 0
+4 7 Cell 30 40 50 60 0 0
+4 8 Nucleus 33 37 53 57 0 0
+5 9 Cell 50 60 50 60 0 0
+5 10 Nucleus 53 57 53 57 0 0
+6 11 Cell 70 80 50 60 0 0
+6 12 Nucleus 73 77 53 57 0 0
+7 13 Cell 30 40 70 80 0 0
+7 14 Nucleus 33 37 73 77 0 0
+8 15 Cell 50 60 70 80 0 0
+8 16 Nucleus 53 57 73 77 0 0
+9 17 Cell 70 80 70 80 0 0
+9 18 Nucleus 73 77 73 77 0 0

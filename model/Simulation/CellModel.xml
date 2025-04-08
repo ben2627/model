@@ -1,0 +1,54 @@
+<CompuCell3D Revision="20210612" Version="4.2.5">
+   <Metadata>
+      <NumberOfProcessors>2</NumberOfProcessors>
+      <DebugOutputFrequency>5</DebugOutputFrequency>
+   </Metadata>
+   
+   <Potts>
+      <Dimensions x="100" y="100" z="1"/>
+      <Steps>10000</Steps>
+      <Temperature>10.0</Temperature>
+      
+      <NeighborOrder>2</NeighborOrder>
+   </Potts>
+   
+   <Plugin Name="BoundaryPixelTracker">
+      <NeighborOrder>2</NeighborOrder>
+   </Plugin>
+   
+   <Plugin Name="CellType">
+      <CellType TypeId="0" TypeName="Medium"/>
+      <CellType TypeId="1" TypeName="Cell"/>
+      <CellType TypeId="2" TypeName="Nucleus"/>
+   </Plugin>
+   
+   <Plugin Name="Volume">
+      <VolumeEnergyParameters CellType="Cell" LambdaVolume="25" TargetVolume="150"/>
+      <VolumeEnergyParameters CellType="Nucleus" LambdaVolume="25" TargetVolume="10"/>
+   </Plugin>
+   
+   <Plugin Name="Contact">
+      <Energy Type1="Medium" Type2="Medium">0.0</Energy>
+      <Energy Type1="Medium" Type2="Cell">30</Energy>
+      <Energy Type1="Medium" Type2="Nucleus">50</Energy>
+      
+      <Energy Type1="Cell" Type2="Cell">20</Energy>
+      <Energy Type1="Cell" Type2="Nucleus">40</Energy>
+      
+      <Energy Type1="Nucleus" Type2="Nucleus">50</Energy>
+      
+      <NeighborOrder>2</NeighborOrder>
+   </Plugin>
+   
+   <Plugin Name="ContactInternal">
+      <Energy Type1="Cell" Type2="Cell">15</Energy>
+      <Energy Type1="Cell" Type2="Nucleus">15</Energy>
+      <Energy Type1="Nucleus" Type2="Nucleus">15</Energy>
+
+      <NeighborOrder>2</NeighborOrder>
+   </Plugin>
+   
+   <Steppable Type="PIFInitializer">
+      <PIFName>Simulation/3x3_gen_dispersed.piff</PIFName>
+   </Steppable>
+</CompuCell3D>
